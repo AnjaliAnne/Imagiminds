@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Register</title>
+        <script src="scripts.js"></script>
+    </head>
+    <body>
+        <form action="/register" method="post">
+            Username : <input type="text" name="name"><br><br>
+            Email :<input type="text" name="email"><br><br>
+            Password : <input type="password" name="pass1" id="p1"><br><br>
+            Confirm Password : <input type="password" id="p2" onkeyup="passcheck()" onfocus="fun1()" onblur="fun2()" name="pass2"><br><br>
+            <input type="checkbox" class="chkbx2" onclick="clickfun()"><label id="l1">Show password</label></input>
+            <span id="msg"></span><br><br>
+            <button name="btn-1">Register</button>
+        </form>
+    </body>
+</html>

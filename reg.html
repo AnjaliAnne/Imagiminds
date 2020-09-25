@@ -2,16 +2,25 @@
     <head>
         <title>Register</title>
         <script src="scripts.js"></script>
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <form action="/register" method="post">
-            Username : <input type="text" name="name"><br><br>
-            Email :<input type="text" name="email"><br><br>
-            Password : <input type="password" name="pass1" id="p1"><br><br>
-            Confirm Password : <input type="password" id="p2" onkeyup="passcheck()" onfocus="fun1()" onblur="fun2()" name="pass2"><br><br>
+            Username : <input type="text" name="name" required><br><br>
+            Email :<input type="text" name="email" required><br><br>
+            Password : <input type="password" name="pass1" id="p1" onkeyup="typefun()" onfocus="focusfun()" onblur="blurfun()" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required><br><br>
+            Confirm Password : <input type="password" id="p2" onkeyup="passcheck()" onfocus="fun1()" onblur="fun2()" name="pass2" required><br><br>
             <input type="checkbox" class="chkbx2" onclick="clickfun()"><label id="l1">Show password</label></input>
             <span id="msg"></span><br><br>
             <button name="btn-1">Register</button>
+            <div>
+                <div id="message">
+                  <h3>Password must contain the following:</h3>
+                  <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                  <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                  <p id="number" class="invalid">A <b>number</b></p>
+                  <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+            </div>
         </form>
     </body>
 </html>

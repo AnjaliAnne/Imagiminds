@@ -7,7 +7,7 @@ app.use(express.static(__dirname+"/public"));
 let ejs=require('ejs');
 
 app.set("view engine","ejs");
-
+//Database
 const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://admin-amala:Smash1551@cluster0.yzaqe.mongodb.net/Imagiminds?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useUnifiedTopology: true,useNewUrlParser: true });
@@ -17,11 +17,11 @@ client.connect(err => {
   db = client.db("Imagiminds");
 });
 
-
+//Register
 app.get("/register",function(req,res){
     res.sendFile(path.join(__dirname,"/reg.html"));
 });
-
+//Login
 app.get("/login",function(req,res){
     res.sendFile(path.join(__dirname,"/login.html"))
 });
